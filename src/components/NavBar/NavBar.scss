@@ -1,0 +1,33 @@
+@import '../../scss/variables.scss';
+
+header {
+  width: 100%;
+  max-width: 100%;
+
+  .pre-header {
+    height: 40px;
+    background-color: black;
+    color: white;
+    line-height: 40px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .header {
+    height: 60px;
+    border-bottom: solid 1px black;
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      
+      .regalon-logo {
+        img {
+          max-height: 40px;
+          width: auto;
+        }
+      }
+    }
+  }
+}
