@@ -29,6 +29,7 @@ header {
         img {
           max-height: 40px;
           width: auto;
+          cursor: pointer;
         }
       }
 
@@ -109,14 +110,11 @@ header {
           margin: 0 10px;
           font-size: 14px;
           line-height: 14px;
-
-          a {
-            text-decoration: none;
-            color: white;
-
-            &:hover {
-              color: red;
-            }
+          color: white;
+          cursor: pointer;
+          
+          &:hover {
+            color: red;
           }
         }
       }
