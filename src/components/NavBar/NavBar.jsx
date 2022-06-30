@@ -7,7 +7,7 @@ const NavBar = () => {
       <div className='pre-header'>Realizá tu pedido online y recibí increíbles beneficios!!</div>
       <div className='header'>
         <div className='header-container'>
-          <div className='regalon-logo'><a href='/'><img alt='Regalon Logo' title='Regalon homepage' src={logo} /></a></div>
+          <div className='regalon-logo'><img alt='Regalon Logo' title='Regalon homepage' src={logo} /></div>
           <div className='search-bar'><input type='text' placeholder='Buscar...'></input></div>
           <div className='user-links'>
             <div className='user-content'>Mi Cuenta</div>
@@ -16,9 +16,9 @@ const NavBar = () => {
         </div>
         <div className='menu-container'>
           <ul>
-            <li className="menu-item"><a href="/">PRODUCTOS</a></li>
-            <li className="menu-item"><a href="/">MARCAS</a></li>
-            <li className="menu-item"><a href="/">OFERTAS</a></li>
+            <li className="menu-item">PRODUCTOS</li>
+            <li className="menu-item">MARCAS</li>
+            <li className="menu-item">OFERTAS</li>
           </ul>
         </div>
       </div>
