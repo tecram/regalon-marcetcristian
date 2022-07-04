@@ -1,5 +1,6 @@
 import './NavBar.scss'
 import logo from '../../assets/logos/regalon-logo.png'
+import CartWidget from '../CartWidget/CartWidget'
 
 const NavBar = () => {
   return <>
@@ -11,7 +12,7 @@ const NavBar = () => {
           <div className='search-bar'><input type='text' placeholder='Buscar...'></input></div>
           <div className='user-links'>
             <div className='user-content'>Mi Cuenta</div>
-            <div className='cart'>Mi carrito</div>
+            <CartWidget />
           </div>
         </div>
         <div className='menu-container'>
