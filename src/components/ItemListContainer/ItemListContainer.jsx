@@ -6,8 +6,7 @@ const ItemListContainer = (props) => {
     <section className="item-list-container">
       <p>{props.greeting}</p>
       <section className='product-cards'>
-        <ItemCount img="assets/products/producto1.jpg" name="BOLSILLO ORGANIZADOR CON ADHESIVO" stock="5" initial="1" />
-        <ItemCount img="assets/products/botella-deportiva.jpg" name="BOTELLA DEPORTIVA" stock="10" initial="1" />
+        <ItemCount stock="5" initial="1" />
       </section>
     </section> 
   )

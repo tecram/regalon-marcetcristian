@@ -1,8 +1,7 @@
 import './ItemCount.scss'
-/* import productImage from '../../assets/products/producto1.jpg' */
 import { useState, useEffect } from "react"
 
-const ItemCount = ({img, name, stock, initial}) => {
+const ItemCount = ({stock, initial}) => {
   const [count, setCount] = useState(parseInt(initial));
 
   useEffect(() => {
@@ -19,11 +18,7 @@ const ItemCount = ({img, name, stock, initial}) => {
 
   return ( 
     <div className='product-card'>
-      <div className='product-image'>
-        <img src={img} alt={name} />
-        {/* <img src={productImage} alt="" /> */}
-      </div>
-      <p className='product-title'>{name}</p>
+      <p className='product-title'>BOLSILLO ORGANIZADOR CON ADHESIVO</p>
       <div className='product-qty'>
         <button onClick={() => onAdd("-")}>-</button>
         <p>{count}</p>
