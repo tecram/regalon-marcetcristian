@@ -6,7 +6,7 @@ const ItemCount = ({stock, initial}) => {
 
   useEffect(() => {
     //console.log("USE EFFECT COUNT");
-  }, [count]);
+  }, [count])
 
   const onAdd = (operation) => {
     if (operation === "-" && count > 0) {
@@ -14,7 +14,7 @@ const ItemCount = ({stock, initial}) => {
     } else if (operation === "+" && count < stock) {
       setCount(count + 1);
     }
-  };
+  }
 
   return ( 
     <div className='product-card'>
