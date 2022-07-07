@@ -8,7 +8,11 @@ const ItemCount = ({stock, initial}) => {
     //console.log("USE EFFECT COUNT");
   }, [count])
 
-  const onAdd = (operation) => {
+  const onAdd = (count) => {
+    console.log(count)
+  }
+
+  const changeQty = (operation) => {
     if (operation === "-" && count > 0) {
       setCount(count - 1);
     } else if (operation === "+" && count < stock) {
@@ -20,12 +24,12 @@ const ItemCount = ({stock, initial}) => {
     <div className='product-card'>
       <p className='product-title'>BOLSILLO ORGANIZADOR CON ADHESIVO</p>
       <div className='product-qty'>
-        <button onClick={() => onAdd("-")}>-</button>
+        <button onClick={() => changeQty("-")}>-</button>
         <p>{count}</p>
-        <button onClick={() => onAdd("+")}>+</button>
+        <button onClick={() => changeQty("+")}>+</button>
       </div>
       <p className='product-stock'>Stock disponible: {stock}</p>
-      <button className='add-cart'>AGREGAR AL CARRITO</button>
+      <button onClick={() => onAdd(count)} className='add-cart'>AGREGAR AL CARRITO</button>
     </div>
   )
 }
