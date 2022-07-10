@@ -1,16 +1,12 @@
 import './ItemCount.scss'
 import { useState, useEffect } from "react"
 
-const ItemCount = ({stock, initial}) => {
+const ItemCount = ({stock, initial, onAdd}) => {
   const [count, setCount] = useState(parseInt(initial));
 
   useEffect(() => {
     //console.log("USE EFFECT COUNT");
   }, [count])
-
-  const onAdd = (count) => {
-    console.log(count)
-  }
 
   const changeQty = (operation) => {
     if (operation === "-" && count > 0) {
