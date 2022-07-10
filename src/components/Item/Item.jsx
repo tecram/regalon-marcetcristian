@@ -1,12 +1,12 @@
+import './Item.scss'
 
-
-const Item = (item) => {
+const Item = ({ item }) => {
   return ( 
     <div className="product-card">
-      <div className="product-image"><img src="" alt="" /></div>
-      <p className="product-name"></p>
-      <p className="product-sku"></p>
-      <p className="product-price"></p>
+      <div className="product-image"><img src={item.pictureUrl} alt="" /></div>
+      <p className="product-name">{item.title}</p>
+      <p className="product-sku">SKU: {item.id}</p>
+      <p className="product-price">$ {item.price}</p>
     </div>
    );
 }
