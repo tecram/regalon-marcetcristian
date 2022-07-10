@@ -1,15 +1,33 @@
 import './ItemListContainer.scss'
-import ItemCount from '../ItemCount/ItemCount';
+import Products from '../../products.json'
+/* import ItemCount from '../ItemCount/ItemCount'; */
+import ItemList from '../ItemList/ItemList'
+import { useState, useEffect } from "react";
 
 const ItemListContainer = (props) => {
-  return ( 
+  const [loading, setLoading] = useState(false);
+
+  /* const onAdd = (count) => {
+    console.log(count)
+  } */
+
+  useEffect(() => {
+    const promise = new Promise((resolve) => {
+      setTimeout( () => resolve(Products), 2000)
+    });
+    promise.then((res) => setLoading(true))
+  }, []);
+
+  return <>
+    {/* <p>{props.greeting}</p>
+    <section className="product-cards">
+      <ItemCount stock="5" initial="1" onAdd={onAdd} />
+    </section> */}
+    
     <section className="item-list-container">
-      <p>{props.greeting}</p>
-      <section className='product-cards'>
-        <ItemCount stock="5" initial="1" />
-      </section>
+      <ItemList items={Products} loading={loading} />
     </section> 
-  )
+  </> 
 }
  
 export default ItemListContainer;
