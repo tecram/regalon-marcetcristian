@@ -1,10 +1,11 @@
 /* import './ItemListContainer.scss' */
 import ProductDetail from '../../product-detail.json'
-import ItemDetail from '../ItemDetail/ItemDetail';
-import { useState, useEffect } from "react";
+import ItemDetail from '../ItemDetail/ItemDetail'
+import { useState, useEffect } from "react"
 
 const ItemDetailContainer = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false)
+  const displayProductId = "1"
 
   useEffect(() => {
     const promise = new Promise((resolve) => {
@@ -13,11 +14,13 @@ const ItemDetailContainer = () => {
     promise.then((res) => setLoading(true))
   }, []);
 
-
+  const getItem = () => {
+    return ProductDetail.filter(item => item.id === displayProductId)
+  }
 
   return ( 
     <section className='product-detail'>
-      <ItemDetail product={ProductDetail} loading={loading} />
+      <ItemDetail product={getItem()} loading={loading} />
     </section>
   );
 }

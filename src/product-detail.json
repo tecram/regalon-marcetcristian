@@ -5,7 +5,88 @@
     "description": "Botella de excelente calidad, para que lleves tu agua a todas tus actividades diarias. También es ideal para llevar tu hidratación al gimnasio o actividades outdoor. Diseño a prueba de fugas. También cuenta con un cordón, la botella se puede llevar fácilmente, puede mantenerla en la mano sin sentirse cansado o incómodo debido al tamaño adecuado y el diseño liviano.",
     "price": 1970,
     "installments": "6 cuotas de $328,33 sin interés",
-    "sku": 9432,
+    "sku": "9432",
     "pictureUrl": "assets/products/botella-deportiva.jpg"
+  },
+  {
+    "id": "2",
+    "title": "Bolsillo con adhesivo",
+    "description": "Práctico compartimento organizador para colocar en lugares estratégicos cerca del alcance. Viene con adhesivo. Es ideal para dejar el celular cargandose ya que tiene un orificio por debajo. También puede usarse para dejar apoyado el control remoto de la tv, del aire acondicionado, etc.",
+    "price": 860,
+    "installments": "3 cuotas de $286,66 sin interés",
+    "sku": "3517",
+    "pictureUrl": "assets/products/bolsillo-adhesivo.jpg"
+  },
+  {
+    "id": "3",
+    "title": "Lámpara atardecer",
+    "description": "Perfecta decoración para tu hogar, los colores mejorarán enormemente la estética de tus ambientes. Además, los colores suaves proyectados crearán un ambiente relajado en tu habitación y la llenarán de energía positiva, lo que te ayudará a relajar tu mente y aliviar el estrés. Se puede inclinar 180 grados y funciona como un proyector, cuanto más lejos está, mayor es el radio. El cabezal de la lámpara de proyección está hecho de cristal, tiene una buena transparencia y reproducción del color. Proyecta un degrade de anillos de colores.",
+    "price": 4300,
+    "installments": "3 cuotas de $1433,33 sin interés",
+    "sku": "1451",
+    "pictureUrl": "assets/products/lampara-atardecer.jpg"
+  },
+  {
+    "id": "4",
+    "title": "Reloj despertador Led Aurora- cambia a 7 colores",
+    "description": "Cambia a 7 colores diferentes, dándo efectos buenísimos de color en la oscuridad con gran brillo y nitidez. Se pueden programar varias funciones como el formato de 12 hs o 24 hs, el tiempo de Snooze y hasta 8 melodías de la alarmas. También dice la termperatura y al tocarlo arriba hace su juego de luces. Formato digital. Se puede legir entre 8 melodías de alarma.",
+    "price": 1600,
+    "installments": "3 cuotas de $533,33 sin interés",
+    "sku": "1451",
+    "pictureUrl": "assets/products/reloj-despertador.jpg"
+  },
+  {
+    "id": "5",
+    "title": "Posa vasos disco x6",
+    "description": "El pack incluye 6 posa vasos discos, todos con distintos diseños Rockabilly vintage. Plástico, con base antideslizante.",
+    "price": 1430,
+    "installments": "3 cuotas de $476,67 sin interés",
+    "sku": "4439",
+    "pictureUrl": "assets/products/posa-vasos-disco.jpg"
+  },
+  {
+    "id": "6",
+    "title": "Destapador picapiedra",
+    "description": "El destapador ideal para regalarle a ese amigo que todavía no evolucionó y sigue destapando las botellas con los dientes o cualquier objeto que encuentre. O tambien para vos y regalarte una sonrisa cada vez que destapes tu próxima botella.",
+    "price": 1200,
+    "installments": "3 cuotas de $400 sin interés",
+    "sku": "8928",
+    "pictureUrl": "assets/products/destapador-picapiedra.jpg"
+  },
+  {
+    "id": "7",
+    "title": "Parlante bluetooth para ducha",
+    "description": "Parlante con sopapa Bluetooth, de gran sonido! Se puede salpicar pero no sumergir en el agua, es ideal para poner música en la ducha. Tiene aproximadamente 10 metros de alcance. Podes atender llamadas ya que también cuenta con micrófono. Batería recargable, incluye cable usb para cargarlo.",
+    "price": 1950,
+    "installments": "3 cuotas de $650 sin interés",
+    "sku": "6217",
+    "pictureUrl": "assets/products/parlante-bluetooth.jpg"
+  },
+  {
+    "id": "8",
+    "title": "Avivador de fuego",
+    "description": "Este gadget es ideal para regalarle al asador designado, para que prenda el fuego inicial del asadito, es pocos segundos. Girando la manivela sopla el aire perfecto para prender el fuego!",
+    "price": 1290,
+    "installments": "3 cuotas de $430 sin interés",
+    "sku": "2783",
+    "pictureUrl": "assets/products/avivador-fuego.jpg"
+  },
+  {
+    "id": "9",
+    "title": "Identificador de vasos lengua",
+    "description": "Pack x 6 identificadrores de silicona con la lengua de los Rolling Stones!",
+    "price": 750,
+    "installments": "3 cuotas de $250 sin interés",
+    "sku": "1547",
+    "pictureUrl": "assets/products/identificador-vasos.jpg"
+  },
+  {
+    "id": "10",
+    "title": "Coctelera de vidrio 400 ML",
+    "description": "Divina coctelera. Un regalo ideal, destaca en cualquier barra o cocina. Cuenta con medidas de ml y oz. Además, cuenta con recomendaciones de tragos impresas en el vidrio.",
+    "price": 5950,
+    "installments": "3 cuotas de $1983,33 sin interés",
+    "sku": "6547",
+    "pictureUrl": "assets/products/coctelera-vidrio.jpg"
   }
 ]

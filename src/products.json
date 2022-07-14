@@ -19,5 +19,54 @@
     "description": "Perfecta decoración para tu hogar, los colores mejorarán enormemente la estética de tus ambientes. Además, los colores suaves proyectados crearán un ambiente relajado en tu habitación y la llenarán de energía positiva, lo que te ayudará a relajar tu mente y aliviar el estrés.",
     "price": 3800,
     "pictureUrl": "assets/products/lampara-atardecer.jpg"
+  },
+  {
+    "id": "4",
+    "title": "Reloj despertador Led Aurora- cambia a 7 colores",
+    "description": "Cambia a 7 colores diferentes, dándo efectos buenísimos de color en la oscuridad con gran brillo y nitidez.",
+    "price": 1600,
+    "pictureUrl": "assets/products/reloj-despertador.jpg"
+  },
+  {
+    "id": "5",
+    "title": "Posa vasos disco x6",
+    "description": "El pack incluye 6 posa vasos discos, todos con distintos diseños Rockabilly vintage.",
+    "price": 1430,
+    "pictureUrl": "assets/products/posa-vasos-disco.jpg"
+  },
+  {
+    "id": "6",
+    "title": "Destapador picapiedra",
+    "description": "El destapador ideal para regalarle a ese amigo que todavía no evolucionó y sigue destapando las botellas con los dientes o cualquier objeto que encuentre.",
+    "price": 1200,
+    "pictureUrl": "assets/products/destapador-picapiedra.jpg"
+  },
+  {
+    "id": "7",
+    "title": "Parlante bluetooth para ducha",
+    "description": "Parlante con sopapa Bluetooth, de gran sonido! Se puede salpicar pero no sumergir en el agua, es ideal para poner música en la ducha.",
+    "price": 1950,
+    "pictureUrl": "assets/products/parlante-bluetooth.jpg"
+  },
+  {
+    "id": "8",
+    "title": "Avivador de fuego",
+    "description": "Este gadget es ideal para regalarle al asador designado, para que prenda el fuego inicial del asadito, es pocos segundos.",
+    "price": 1290,
+    "pictureUrl": "assets/products/avivador-fuego.jpg"
+  },
+  {
+    "id": "9",
+    "title": "Identificador de vasos lengua",
+    "description": "Pack x 6 identificadrores de silicona con la lengua de los Rolling Stones!",
+    "price": 750,
+    "pictureUrl": "assets/products/identificador-vasos.jpg"
+  },
+  {
+    "id": "10",
+    "title": "Coctelera de vidrio 400 ML",
+    "description": "Divina coctelera. Un regalo ideal, destaca en cualquier barra o cocina.",
+    "price": 5950,
+    "pictureUrl": "assets/products/coctelera-vidrio.jpg"
   }
 ]
