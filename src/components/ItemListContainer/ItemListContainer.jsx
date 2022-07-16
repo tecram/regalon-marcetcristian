@@ -1,15 +1,11 @@
 import './ItemListContainer.scss'
-import Products from '../../products.json'
+import Products from '../../product-detail.json'
 /* import ItemCount from '../ItemCount/ItemCount'; */
 import ItemList from '../ItemList/ItemList'
 import { useState, useEffect } from "react";
 
 const ItemListContainer = (props) => {
   const [loading, setLoading] = useState(false);
-
-  /* const onAdd = (count) => {
-    console.log(count)
-  } */
 
   useEffect(() => {
     const promise = new Promise((resolve) => {
@@ -19,11 +15,6 @@ const ItemListContainer = (props) => {
   }, []);
 
   return <>
-    {/* <p>{props.greeting}</p>
-    <section className="product-cards">
-      <ItemCount stock="5" initial="1" onAdd={onAdd} />
-    </section> */}
-    
     <section className="item-list-container">
       <ItemList items={Products} loading={loading} />
     </section> 

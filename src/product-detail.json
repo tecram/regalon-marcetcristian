@@ -6,7 +6,9 @@
     "price": 1970,
     "installments": "6 cuotas de $328,33 sin interés",
     "sku": "9432",
-    "pictureUrl": "assets/products/botella-deportiva.jpg"
+    "pictureUrl": "assets/products/botella-deportiva.jpg",
+    "category": "indoor",
+    "offer": true
   },
   {
     "id": "2",
@@ -15,7 +17,9 @@
     "price": 860,
     "installments": "3 cuotas de $286,66 sin interés",
     "sku": "3517",
-    "pictureUrl": "assets/products/bolsillo-adhesivo.jpg"
+    "pictureUrl": "assets/products/bolsillo-adhesivo.jpg",
+    "category": "outdoor",
+    "offer": false
   },
   {
     "id": "3",
@@ -24,7 +28,9 @@
     "price": 4300,
     "installments": "3 cuotas de $1433,33 sin interés",
     "sku": "1451",
-    "pictureUrl": "assets/products/lampara-atardecer.jpg"
+    "pictureUrl": "assets/products/lampara-atardecer.jpg",
+    "category": "indoor",
+    "offer": false
   },
   {
     "id": "4",
@@ -33,7 +39,9 @@
     "price": 1600,
     "installments": "3 cuotas de $533,33 sin interés",
     "sku": "1451",
-    "pictureUrl": "assets/products/reloj-despertador.jpg"
+    "pictureUrl": "assets/products/reloj-despertador.jpg",
+    "category": "indoor",
+    "offer": false
   },
   {
     "id": "5",
@@ -42,7 +50,9 @@
     "price": 1430,
     "installments": "3 cuotas de $476,67 sin interés",
     "sku": "4439",
-    "pictureUrl": "assets/products/posa-vasos-disco.jpg"
+    "pictureUrl": "assets/products/posa-vasos-disco.jpg",
+    "category": "indoor",
+    "offer": true
   },
   {
     "id": "6",
@@ -51,7 +61,9 @@
     "price": 1200,
     "installments": "3 cuotas de $400 sin interés",
     "sku": "8928",
-    "pictureUrl": "assets/products/destapador-picapiedra.jpg"
+    "pictureUrl": "assets/products/destapador-picapiedra.jpg",
+    "category": "indoor",
+    "offer": true
   },
   {
     "id": "7",
@@ -60,7 +72,9 @@
     "price": 1950,
     "installments": "3 cuotas de $650 sin interés",
     "sku": "6217",
-    "pictureUrl": "assets/products/parlante-bluetooth.jpg"
+    "pictureUrl": "assets/products/parlante-bluetooth.jpg",
+    "category": "outdoor",
+    "offer": false
   },
   {
     "id": "8",
@@ -69,7 +83,9 @@
     "price": 1290,
     "installments": "3 cuotas de $430 sin interés",
     "sku": "2783",
-    "pictureUrl": "assets/products/avivador-fuego.jpg"
+    "pictureUrl": "assets/products/avivador-fuego.jpg",
+    "category": "outdoor",
+    "offer": false
   },
   {
     "id": "9",
@@ -78,7 +94,9 @@
     "price": 750,
     "installments": "3 cuotas de $250 sin interés",
     "sku": "1547",
-    "pictureUrl": "assets/products/identificador-vasos.jpg"
+    "pictureUrl": "assets/products/identificador-vasos.jpg",
+    "category": "indoor",
+    "offer": true
   },
   {
     "id": "10",
@@ -87,6 +105,8 @@
     "price": 5950,
     "installments": "3 cuotas de $1983,33 sin interés",
     "sku": "6547",
-    "pictureUrl": "assets/products/coctelera-vidrio.jpg"
+    "pictureUrl": "assets/products/coctelera-vidrio.jpg",
+    "category": "indoor",
+    "offer": false
   }
 ]
