@@ -1,6 +1,7 @@
 import './ItemDetail.scss'
 
 const ItemDetail = ({ product, loading }) => {
+  console.log(product[0].pictureUrl)
   const displayElements = () => {
     if(loading) {
       return (

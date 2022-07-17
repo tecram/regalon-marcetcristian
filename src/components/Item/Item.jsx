@@ -1,7 +1,7 @@
 import './Item.scss'
 
 const Item = ({ item }) => {
-  console.log(item.offer)
+  console.log(item)
   return ( 
     <div className="product-card">
       <div className="product-image">

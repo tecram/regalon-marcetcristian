@@ -17,8 +17,8 @@ const NavBar = () => {
         </div>
         <div className='menu-container'>
           <ul>
-            <li className="menu-item">PRODUCTOS</li>
-            <li className="menu-item">INDOOR</li>
+            <Link to={"/"}><li className="menu-item">PRODUCTOS</li></Link>
+            <Link className="navbar-brand" to={"/"}><li className="menu-item">INDOOR</li></Link>
             <li className="menu-item">OUTDOOR</li>
           </ul>
         </div>
