@@ -1,17 +1,17 @@
 import './Item.scss'
+import { Link } from "react-router-dom"
 
 const Item = ({ item }) => {
-  console.log(item)
   return ( 
     <div className="product-card">
       <div className="product-image">
-        <img src={item.pictureUrl} alt="" />
-        {(() => {
+        <Link className="navbar-category" to={`/producto/${item.id}`}><img src={item.pictureUrl} alt="" /></Link>
+        {/* {(() => {
           if(item.offer)
             return <span className='offer-badge'>OFERTA</span>
-        })()}
+        })()} */}
       </div>
-      <p className="product-name">{item.title}</p>
+      <Link className="product-link" to={`/producto/${item.id}`}><p className="product-name">{item.title}</p></Link>
       <p className="product-sku">SKU: {item.id}</p>
       <p className="product-price">$ {item.price}</p>
     </div>

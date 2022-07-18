@@ -24,6 +24,9 @@ const ItemListContainer = (props) => {
     });
     promise.then((res) => setLoading(true))
   }, [name]);
+  
+  console.log('items',items)
+  console.log('name',name)
 
   return <>
     <section className="item-list-container">
