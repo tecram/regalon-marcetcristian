@@ -10,27 +10,25 @@ const ItemListContainer = (props) => {
   const [items, setItems] = useState([]);
   const { name } = useParams();
 
-  useEffect(() => {
-    const promise = new Promise((resolve) => {
-      /* setTimeout( () => resolve(Products), 2000) */
-      setTimeout(() => {
-        const products = resolve(Products)
-        if (name) {
-          setItems(products.filter((product) => product.category === name));
-        } else {
-          setItems(products);
+  useEffect(()=>{
+    const promise =new Promise((resolve)=>{
+      setTimeout(()=>{
+        if(name){
+          resolve(Products.filter((product)=> product.category=== name));
+        }else{
+          resolve(Products);
         }
-      }, 2000);
+      },2000)
+    })
+    promise.then((res)=>{
+      setItems(res);
+      setLoading(true);
     });
-    promise.then((res) => setLoading(true))
-  }, [name]);
+  },[name])
   
-  console.log('items',items)
-  console.log('name',name)
-
   return <>
     <section className="item-list-container">
-      <ItemList items={Products} loading={loading} />
+      <ItemList items={items} loading={loading} />
     </section> 
   </> 
 }

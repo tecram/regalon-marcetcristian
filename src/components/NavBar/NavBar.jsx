@@ -19,8 +19,8 @@ const NavBar = () => {
         <div className='menu-container'>
           <ul>
             <Link className="navbar-category" to={"/"}><li className="menu-item">PRODUCTOS</li></Link>
-            <Link className="navbar-category" to={"/category/indoor"}><li className="menu-item">INDOOR</li></Link>
-            <Link className="navbar-category" to={"/category/outdoor"}></Link><li className="menu-item">OUTDOOR</li>
+            <Link className="navbar-category" to={"/categoria/indoor"}><li className="menu-item">INDOOR</li></Link>
+            <Link className="navbar-category" to={"/categoria/outdoor"}><li className="menu-item">OUTDOOR</li></Link>
           </ul>
         </div>
       </div>
