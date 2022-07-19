@@ -21,6 +21,7 @@ const NavBar = () => {
             <Link className="navbar-category" to={"/"}><li className="menu-item">PRODUCTOS</li></Link>
             <Link className="navbar-category" to={"/categoria/indoor"}><li className="menu-item">INDOOR</li></Link>
             <Link className="navbar-category" to={"/categoria/outdoor"}><li className="menu-item">OUTDOOR</li></Link>
+            <Link className="navbar-category" to={"/categoria/tazas"}><li className="menu-item">TAZAS</li></Link>
           </ul>
         </div>
       </div>

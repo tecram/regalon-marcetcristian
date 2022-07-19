@@ -108,5 +108,49 @@
     "pictureUrl": "assets/products/coctelera-vidrio.jpg",
     "category": "indoor",
     "offer": false
+  },
+  {
+    "id": "11",
+    "title": "Taza Ralph",
+    "description": "Impresión vitrificado, no se sale. Capacidad: 280 ml",
+    "price": 1581,
+    "installments": "3 cuotas de $1983,33 sin interés",
+    "sku": "3571",
+    "pictureUrl": "assets/products/taza-ralph.jpg",
+    "category": "tazas",
+    "offer": false
+  },
+  {
+    "id": "12",
+    "title": "Tazon Bob Esponja",
+    "description": "Ideal para tomar el té, café con leche y por su tamaño también es ideal para los cereales! Medidas: 11 cm de diámetro x 8 cm de alto. Capacidad: 450 ml",
+    "price": 1582,
+    "installments": "3 cuotas de $1983,33 sin interés",
+    "sku": "3571",
+    "pictureUrl": "assets/products/taza-bob-esponja.jpg",
+    "category": "tazas",
+    "offer": false
+  },
+  {
+    "id": "13",
+    "title": "Tazon Friends",
+    "description": "Ideal para los cereales del desayuno, un café con leche o una rica sopa. Impreso vitrificado (no se sale). Capacidad: 450 ml",
+    "price": 1999,
+    "installments": "3 cuotas de $666,33 sin interés",
+    "sku": "3571",
+    "pictureUrl": "assets/products/taza-friends.jpg",
+    "category": "tazas",
+    "offer": false
+  },
+  {
+    "id": "14",
+    "title": "Tazon Grey'S Anatomy",
+    "description": "Ideal para los cereales del desayuno, un café con leche o una rica sopa. Impreso vitrificado (no se sale). Capacidad: 450 ml",
+    "price": 1900,
+    "installments": "3 cuotas de $666,33 sin interés",
+    "sku": "3571",
+    "pictureUrl": "assets/products/taza-greys-anatomy.jpg",
+    "category": "tazas",
+    "offer": false
   }
 ]

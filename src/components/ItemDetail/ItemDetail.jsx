@@ -23,7 +23,7 @@ const ItemDetail = ({ product, loading }) => {
       )
     }
     else {
-      return <h4>Cargando...</h4>
+      return <div class="spinner"></div>
     }
   }
   return displayElements()

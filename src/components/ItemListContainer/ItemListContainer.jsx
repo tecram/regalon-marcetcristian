@@ -23,7 +23,10 @@ const ItemListContainer = (props) => {
     promise.then((res)=>{
       setItems(res);
       setLoading(true);
-    });
+    })
+    return () => {
+      setLoading(false)
+    }
   },[name])
   
   return <>
