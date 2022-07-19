@@ -6,7 +6,7 @@ const ItemDetail = ({ product, loading }) => {
       return (
         <>
           <div className="pdp-left-content">
-            <div className="pdp-image"><img src={product[0].pictureUrl} alt={product[0].title} /></div>
+            <div className="pdp-image"><img src={`../${product[0].pictureUrl}`} alt={product[0].title} /></div>
           </div>
           <div className="pdp-right-content">
             <div className="pdp-product-name">{product[0].title}</div>
@@ -23,10 +23,10 @@ const ItemDetail = ({ product, loading }) => {
       )
     }
     else {
-      return <h4>Cargando...</h4>
+      return <div class="spinner"></div>
     }
   }
   return displayElements()
 }
- 
+
 export default ItemDetail;

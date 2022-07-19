@@ -78,6 +78,10 @@ header {
       border-bottom: solid 1px black;
       background-color: black;
 
+      .navbar-category {
+        text-decoration: none;
+      }
+
       ul {
         @include center-layout();
         height: 30px;
