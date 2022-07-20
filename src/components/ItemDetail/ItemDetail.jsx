@@ -23,7 +23,7 @@ const ItemDetail = ({ product, loading }) => {
       )
     }
     else {
-      return <div class="spinner"></div>
+      return <div className="spinner"></div>
     }
   }
   return displayElements()
