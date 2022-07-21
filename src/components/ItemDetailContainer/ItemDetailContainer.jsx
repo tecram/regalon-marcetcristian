@@ -16,7 +16,7 @@ const ItemDetailContainer = () => {
   }, [id]);
 
   const getItem = () => {
-    return ProductDetail.filter(item => item.id === id)
+    return ProductDetail.filter(item => item.id === id).shift()
   }
 
   return ( 
