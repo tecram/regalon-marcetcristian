@@ -89,5 +89,15 @@
         font-weight: 600;
       }
     }
+
+    .text-added {
+      margin-bottom: 0;
+      color: #A8180F;
+    }
+
+    .pdp-go-cart {
+      @include buy-button();
+      margin-top: 10px;
+    }
   }
 }

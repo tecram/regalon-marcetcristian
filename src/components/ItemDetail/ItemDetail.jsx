@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 import './ItemDetail.scss'
+import { Link } from 'react-router-dom'
 
 const ItemDetail = ({ product, loading }) => {
   const [amount, setAmount] = useState(0);
@@ -28,10 +29,11 @@ const ItemDetail = ({ product, loading }) => {
             {amount === 0 ? (
               <ItemCount stock={product[0].stock} initial="1" onAdd={onAdd} />
             ) : (
-              <h1>{amount} productos comprados.</h1>
+              <div>
+                <h3 className="text-added">{amount} productos agregados al carrito.</h3>
+                <Link to="/cart"><button className="pdp-go-cart" >IR AL CARRITO</button></Link>
+              </div>
             )}
-            
-            {/* <div className="pdp-buy"><button className="pdp-buy-button" >AGREGAR AL CARRITO</button></div> */}
           </div>
         </>
       )
