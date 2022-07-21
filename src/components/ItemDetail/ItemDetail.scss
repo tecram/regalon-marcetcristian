@@ -87,7 +87,22 @@
       .pdp-description-title {
         font-size: 24px;
         font-weight: 600;
+        margin-bottom: 12px;
       }
+
+      .pdp-description {
+        line-height: 22px;
+      }
+    }
+
+    .text-added {
+      margin-bottom: 0;
+      color: #A8180F;
+    }
+
+    .pdp-go-cart {
+      @include buy-button();
+      margin-top: 10px;
     }
   }
 }

@@ -6,7 +6,7 @@ const ItemList = ({ items, loading }) => {
       return items.map( (item, index) => <Item item={item} key={index} />)
     }
     else {
-      return <div class="spinner"></div>
+      return <div className="spinner"></div>
     }
   }
   return displayElements()

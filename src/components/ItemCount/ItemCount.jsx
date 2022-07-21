@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 
 const ItemCount = ({stock, initial, onAdd}) => {
   const [count, setCount] = useState(parseInt(initial));
-
+  
   useEffect(() => {
     //console.log("USE EFFECT COUNT");
   }, [count])
@@ -16,17 +16,18 @@ const ItemCount = ({stock, initial, onAdd}) => {
     }
   }
 
-  return ( 
-    <div className='product-card'>
-      <p className='product-title'>BOLSILLO ORGANIZADOR CON ADHESIVO</p>
+  return (
+    <>
+    <div className="product-qty-container">
       <div className='product-qty'>
         <button onClick={() => changeQty("-")}>-</button>
         <p>{count}</p>
         <button onClick={() => changeQty("+")}>+</button>
       </div>
-      <p className='product-stock'>Stock disponible: {stock}</p>
-      <button onClick={() => onAdd(count)} className='add-cart'>AGREGAR AL CARRITO</button>
     </div>
+    <p className="product-stock">Stock: {stock}</p>
+    <div className="pdp-buy"><button onClick={() => onAdd(count)} className="pdp-buy-button">AGREGAR AL CARRITO</button></div>
+    </>
   )
 }
  
