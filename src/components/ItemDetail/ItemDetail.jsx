@@ -1,13 +1,17 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 import './ItemDetail.scss'
 import { Link } from 'react-router-dom'
+import { CartContext } from '../contexts/CartContext'
 
 const ItemDetail = ({ product, loading }) => {
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState(0)
+  const { setCartItems } = useContext(CartContext)
+  
 
   const onAdd = (amount) => {
-    setAmount(amount);
+    setAmount(amount)
+    setCartItems((prevState) => [...prevState, product])
   };
 
   const displayElements = () => {
@@ -27,7 +31,7 @@ const ItemDetail = ({ product, loading }) => {
               <p className="pdp-description">{product.description}</p>
             </div>
             {amount === 0 ? (
-              <ItemCount stock={product.stock} initial="1" onAdd={onAdd} />
+              <ItemCount stock={product.stock} initial="1" onAdd={onAdd} amount={amount} />
             ) : (
               <div>
                 <h3 className="text-added">{amount} productos agregados al carrito.</h3>

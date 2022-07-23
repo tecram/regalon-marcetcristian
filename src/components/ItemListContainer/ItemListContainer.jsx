@@ -7,22 +7,22 @@ import { useParams } from "react-router-dom"
 
 const ItemListContainer = (props) => {
   const [loading, setLoading] = useState(false);
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState([])
   const { name } = useParams();
 
   useEffect(()=>{
-    const promise =new Promise((resolve)=>{
+    const promise = new Promise((resolve)=>{
       setTimeout(()=>{
         if(name){
-          resolve(Products.filter((product)=> product.category=== name));
+          resolve(Products.filter((product)=> product.category === name))
         }else{
-          resolve(Products);
+          resolve(Products)
         }
       },2000)
     })
     promise.then((res)=>{
-      setItems(res);
-      setLoading(true);
+      setItems(res)
+      setLoading(true)
     })
     return () => {
       setLoading(false)
