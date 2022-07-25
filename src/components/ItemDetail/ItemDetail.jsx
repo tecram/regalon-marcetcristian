@@ -6,7 +6,7 @@ import { CartContext } from '../contexts/CartContext'
 
 const ItemDetail = ({ product, loading }) => {
   const [amount, setAmount] = useState(0)
-  const { setCartItems } = useContext(CartContext)
+  const { cartItems, setCartItems } = useContext(CartContext)
   
 
   const onAdd = (amount) => {
