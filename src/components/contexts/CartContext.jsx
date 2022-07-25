@@ -47,14 +47,14 @@ const CartProvider = (props) => {
 
     const checkProduct = (prodId) => {
       console.log(prodId)
-
+      cartItems = cartFilter
     }
 
-    setCartItems([...cartItems,{item, count}])
+    setCartItems([...cartItems])
   }
 
   const clearCart = () => {
-    console.log('empty cart')
+    setCartItems([])
   }
 
   const totalizer = () => {
