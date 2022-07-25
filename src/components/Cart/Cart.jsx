@@ -40,7 +40,7 @@ const Cart = () => {
                   <td>${item.price}</td>
                   <td>2</td>
                   <td>${item.price}</td>
-                  <td><img src="../../assets/icons/trash-icon.svg" alt="Remover producto" /></td>
+                  <td><img className="trash-icon" src="assets/icons/trash-icon.svg" alt="Remover producto" title="Remover producto" /></td>
                 </tr>
               ))}
             </tbody>

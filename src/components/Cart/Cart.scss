@@ -62,6 +62,12 @@ body {
             &.cart-product-name {
               text-align: left;
             }
+
+            .trash-icon {
+              max-height: 20px;
+              display: block;
+              cursor: pointer;
+            }
           }
         }
       }
