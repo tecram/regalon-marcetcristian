@@ -4,15 +4,12 @@ import "./Cart.scss"
 
 const Cart = () => {
   const [totalPrice, setTotalPrice] = useState(0)
-  const { cartItems } = useContext(CartContext)
+  /* const { cartItems } = useContext(CartContext) */
+  const { cartItems, totalizer, removeItem, clearCart } = useContext(CartContext)
   
   useEffect(() => {
-    let total = 0
-    cartItems.forEach((item, index) => {
-      total += parseInt(item.price)
-    });
-    setTotalPrice(total)
-  }, [cartItems])
+    setTotalPrice(totalizer())
+  }, [])
   
   return (
     <>
@@ -29,22 +26,23 @@ const Cart = () => {
               </tr>
             </thead>
             <tbody>
-              {cartItems.map((item) => (
+              {cartItems.map((product) => (
                 <tr>
                   <td className="cart-product-thumb">
                     <div className="cart-thumb-container">
-                      <img src={item.pictureUrl} alt={item.title} />
+                      <img src={product.item.pictureUrl} alt={product.item.title} />
                     </div>
                   </td>
-                  <td className="cart-product-name">{item.title}</td>
-                  <td>${item.price}</td>
-                  <td>2</td>
-                  <td>${item.price}</td>
-                  <td><img className="trash-icon" src="assets/icons/trash-icon.svg" alt="Remover producto" title="Remover producto" /></td>
+                  <td className="cart-product-name">{product.item.title}</td>
+                  <td>${product.item.price}</td>
+                  <td>{product.count}</td>
+                  <td>${product.item.price * product.count}</td>
+                  <td><div onClick={() => removeItem(product.item.id, product.count)}><img className="trash-icon" src="assets/icons/trash-icon.svg" alt="Remover producto" title="Remover producto" /></div></td>
                 </tr>
               ))}
             </tbody>
           </table>
+          <div onClick={() => clearCart()} className="empty-cart">Vaciar carrito</div>
         </div>
         <div className="cart-right">
           <h3>Resumen de compra</h3>

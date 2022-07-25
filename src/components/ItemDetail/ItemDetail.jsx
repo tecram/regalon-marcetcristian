@@ -6,13 +6,7 @@ import { CartContext } from '../contexts/CartContext'
 
 const ItemDetail = ({ product, loading }) => {
   const [amount, setAmount] = useState(0)
-  const { cartItems, setCartItems } = useContext(CartContext)
-  
-
-  const onAdd = (amount) => {
-    setAmount(amount)
-    setCartItems((prevState) => [...prevState, product])
-  };
+  const { cartItems, setCartItems, addItem } = useContext(CartContext)
 
   const displayElements = () => {
     if(loading) {
@@ -31,7 +25,7 @@ const ItemDetail = ({ product, loading }) => {
               <p className="pdp-description">{product.description}</p>
             </div>
             {amount === 0 ? (
-              <ItemCount stock={product.stock} initial="1" onAdd={onAdd} amount={amount} />
+              <ItemCount stock={product.stock} initial="1" onAdd={addItem} item={product} amount={amount} />
             ) : (
               <div>
                 <h3 className="text-added">{amount} productos agregados al carrito.</h3>
