@@ -30,7 +30,12 @@ const ItemDetail = ({ product, loading }) => {
                 <Link to="/cart"><button className="pdp-go-cart" >IR AL CARRITO</button></Link>
               </div>
               ) : (
-                <ItemCount stock={product.stock} initial="1" onAdd={addItem} item={product} addedProduct={(addedProduct, setAddedProduct)} />
+                <ItemCount 
+                  stock={product.stock} 
+                  initial="1" 
+                  onAdd={addItem} 
+                  item={product} 
+                  addedProduct={(setAddedProduct)} />
             )}
           </div>
         </>
