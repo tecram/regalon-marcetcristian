@@ -5,10 +5,13 @@ import { Link } from 'react-router-dom'
 import { CartContext } from '../contexts/CartContext'
 
 const ItemDetail = ({ product, loading }) => {
-  const { addItem, quantity } = useContext(CartContext)
+  const { addItem, quantity, cartItems } = useContext(CartContext)
   const [addedProduct, setAddedProduct] = useState(false)
 
   const displayElements = () => {
+    
+    /* console.log(cartItems[0].count) */
+
     if(loading) {
       return (
         <>
@@ -35,7 +38,7 @@ const ItemDetail = ({ product, loading }) => {
                   initial="1" 
                   onAdd={addItem} 
                   item={product} 
-                  addedProduct={(setAddedProduct)} />
+                  setAddedProduct={setAddedProduct} />
             )}
           </div>
         </>

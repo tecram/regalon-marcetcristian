@@ -4,7 +4,6 @@ import "./Cart.scss"
 
 const Cart = () => {
   const [totalPrice, setTotalPrice] = useState(0)
-  /* const { cartItems } = useContext(CartContext) */
   const { cartItems, totalizer, removeItem, clearCart } = useContext(CartContext)
   
   useEffect(() => {
@@ -26,8 +25,8 @@ const Cart = () => {
               </tr>
             </thead>
             <tbody>
-              {cartItems.map((product) => (
-                <tr>
+              {cartItems.map((product, index) => (
+                <tr key={index}>
                   <td className="cart-product-thumb">
                     <div className="cart-thumb-container">
                       <img src={product.item.pictureUrl} alt={product.item.title} />
