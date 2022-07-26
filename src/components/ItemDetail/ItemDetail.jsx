@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'
 import { CartContext } from '../contexts/CartContext'
 
 const ItemDetail = ({ product, loading }) => {
-  const [amount, setAmount] = useState(0)
-  const { cartItems, setCartItems, addItem } = useContext(CartContext)
+  const { addItem, quantity } = useContext(CartContext)
+  const [addedProduct, setAddedProduct] = useState(false)
 
   const displayElements = () => {
     if(loading) {
@@ -24,13 +24,13 @@ const ItemDetail = ({ product, loading }) => {
               <p className="pdp-description-title">Descripción</p>
               <p className="pdp-description">{product.description}</p>
             </div>
-            {amount === 0 ? (
-              <ItemCount stock={product.stock} initial="1" onAdd={addItem} item={product} amount={amount} />
-            ) : (
+            {addedProduct ? (
               <div>
-                <h3 className="text-added">{amount} productos agregados al carrito.</h3>
+                <h3 className="text-added">{quantity} productos agregados al carrito.</h3>
                 <Link to="/cart"><button className="pdp-go-cart" >IR AL CARRITO</button></Link>
               </div>
+              ) : (
+                <ItemCount stock={product.stock} initial="1" onAdd={addItem} item={product} addedProduct={(addedProduct, setAddedProduct)} />
             )}
           </div>
         </>

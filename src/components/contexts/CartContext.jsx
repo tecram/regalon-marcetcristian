@@ -35,22 +35,8 @@ const CartProvider = (props) => {
     setCartItems([...cartItems,{item, count}])
   }
 
-  const removeItem = (itemId, count) => {
-    console.log(itemId)
-    console.log(count)
-    console.log('remover')
-
-    count = count - 1
-    console.log(count)
-
-    let cartFilter = cartItems.filter(checkProduct)
-
-    const checkProduct = (prodId) => {
-      console.log(prodId)
-      cartItems = cartFilter
-    }
-
-    setCartItems([...cartItems])
+  const removeItem = (itemId) => {
+    setCartItems(cartItems.filter((element) => element.item.id !== itemId))
   }
 
   const clearCart = () => {
