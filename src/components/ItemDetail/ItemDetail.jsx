@@ -5,12 +5,11 @@ import { Link } from 'react-router-dom'
 import { CartContext } from '../contexts/CartContext'
 
 const ItemDetail = ({ product, loading }) => {
-  const { addItem, quantity, cartItems } = useContext(CartContext)
+  const { addItem } = useContext(CartContext)
   const [addedProduct, setAddedProduct] = useState(false)
+  const [count, setCount] = useState(parseInt(1));
 
   const displayElements = () => {
-    
-    /* console.log(cartItems[0].count) */
 
     if(loading) {
       return (
@@ -29,7 +28,7 @@ const ItemDetail = ({ product, loading }) => {
             </div>
             {addedProduct ? (
               <div>
-                <h3 className="text-added">{quantity} productos agregados al carrito.</h3>
+                <h3 className="text-added">{count} productos agregados al carrito.</h3>
                 <Link to="/cart"><button className="pdp-go-cart" >IR AL CARRITO</button></Link>
               </div>
               ) : (
@@ -38,7 +37,9 @@ const ItemDetail = ({ product, loading }) => {
                   initial="1" 
                   onAdd={addItem} 
                   item={product} 
-                  setAddedProduct={setAddedProduct} />
+                  setAddedProduct={setAddedProduct}
+                  count={count}
+                  setCount={setCount} />
             )}
           </div>
         </>
