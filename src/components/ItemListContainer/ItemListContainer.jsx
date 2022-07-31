@@ -1,9 +1,8 @@
 import './ItemListContainer.scss'
-import Products from '../../product-detail.json'
-/* import ItemCount from '../ItemCount/ItemCount'; */
 import ItemList from '../ItemList/ItemList'
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
+import { getFirestore, collection, getDocs } from "firebase/firestore"
 
 const ItemListContainer = (props) => {
   const [loading, setLoading] = useState(false);
@@ -11,22 +10,18 @@ const ItemListContainer = (props) => {
   const { name } = useParams();
 
   useEffect(()=>{
-    const promise = new Promise((resolve)=>{
-      setTimeout(()=>{
-        if(name){
-          resolve(Products.filter((product)=> product.category === name))
-        }else{
-          resolve(Products)
-        }
-      },2000)
-    })
-    promise.then((res)=>{
-      setItems(res)
+    const db = getFirestore()
+    const itemsCollection = collection(db, "items")
+    getDocs(itemsCollection).then( (snapshot) => {
+      const data = snapshot.docs.map( (doc) => ({ id: doc.id, ...doc.data()}))
+      
+      if(name){
+        setItems(data.filter((product)=> product.category === name))
+      }else{
+        setItems(data)
+      }
       setLoading(true)
     })
-    return () => {
-      setLoading(false)
-    }
   },[name])
   
   return <>

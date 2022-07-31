@@ -1,27 +1,27 @@
-/* import './ItemListContainer.scss' */
-import ProductDetail from '../../product-detail.json'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
+import { getDoc, doc, getFirestore } from "firebase/firestore"
 
 const ItemDetailContainer = () => {
   const [loading, setLoading] = useState(false)
+  const [product, setProduct] = useState(false)
   const { id } = useParams();
 
   useEffect(() => {
-    const promise = new Promise((resolve) => {
-      setTimeout( () => resolve(ProductDetail), 2000)
-    });
-    promise.then((res) => setLoading(true))
+    const db = getFirestore()
+    const docRef = doc(db, "items", id)
+    getDoc(docRef).then((snapshot) => { 
+      const data = {id: snapshot.id, ...snapshot.data()}
+      setProduct(data)
+      setLoading(true)
+      return data
+    })
   }, [id]);
-
-  const getItem = () => {
-    return ProductDetail.filter(item => item.id === id).shift()
-  }
 
   return ( 
     <section className='product-detail'>
-      <ItemDetail product={getItem()} loading={loading} />
+      <ItemDetail product={product} loading={loading} />
     </section>
   );
 }
