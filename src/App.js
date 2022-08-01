@@ -11,7 +11,6 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          {/* <ItemListContainer greeting="Bienvenido a la tienda Regalon" /> */}
           <Route path="/" element={<ItemListContainer />} />
           <Route path="/productos" element={<ItemListContainer />} />
           <Route path="/categoria/:name" element={<ItemListContainer />} />
