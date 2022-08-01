@@ -2,7 +2,7 @@ import './ItemListContainer.scss'
 import ItemList from '../ItemList/ItemList'
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-import { getFirestore, collection, getDocs } from "firebase/firestore"
+import { getFirestore, collection, getDocs, query, where } from "firebase/firestore"
 
 const ItemListContainer = (props) => {
   const [loading, setLoading] = useState(false);
@@ -11,17 +11,25 @@ const ItemListContainer = (props) => {
 
   useEffect(()=>{
     const db = getFirestore()
-    const itemsCollection = collection(db, "items")
-    getDocs(itemsCollection).then( (snapshot) => {
-      const data = snapshot.docs.map( (doc) => ({ id: doc.id, ...doc.data()}))
-      
-      if(name){
-        setItems(data.filter((product)=> product.category === name))
-      }else{
-        setItems(data)
-      }
-      setLoading(true)
-    })
+    const itemCollection = collection(db, "items")
+    
+    if(name){
+      const filteredCollection = query(itemCollection, where("category", "==", name))
+      getDocs(filteredCollection).then( (snapshot) => {
+        const items = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data()
+        }))
+        setItems(items)
+      })
+    }
+    else{
+      getDocs(itemCollection).then( (snapshot) => {
+        const items = snapshot.docs.map( (doc) => ({ id: doc.id, ...doc.data()}))
+        setItems(items)
+      })
+    }
+    setLoading(true)
   },[name])
   
   return <>
