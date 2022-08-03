@@ -140,10 +140,14 @@ body {
       }
     }
 
-    .buy-button {
-      @include buy-button();
-      margin: 30px auto 0;
-      display: block;
+    .go-checkout {
+      text-decoration: none;
+      
+      .buy-button {
+        @include buy-button();
+        margin: 30px auto 0;
+        display: block;
+      }
     }
   }
 

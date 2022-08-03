@@ -29,7 +29,10 @@ const ItemDetail = ({ product, loading }) => {
             {addedProduct ? (
               <div>
                 <h3 className="text-added">{count} productos agregados al carrito.</h3>
-                <Link to="/cart"><button className="pdp-go-cart" >IR AL CARRITO</button></Link>
+                <div className="pdp-btn-container">
+                  <Link to="/"><button className="pdp-go-home">SEGUIR COMPRANDO</button></Link>
+                  <Link to="/cart"><button className="pdp-go-cart">IR AL CARRITO</button></Link>
+                </div>
               </div>
               ) : (
                 <ItemCount 
