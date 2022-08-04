@@ -1,10 +1,11 @@
 import React, { createContext, useEffect, useState } from "react"
-import { addDoc, collection, getFirestore } from "firebase/firestore";
+import { addDoc, collection, getFirestore, doc, updateDoc, getDoc } from "firebase/firestore";
 
 export const CartContext = createContext()
 
 const CartProvider = (props) => {
   const [cartItems, setCartItems] = useState([])
+  const [availableStock, setAvailableStock] = useState(0)
 
   //crear coleccion nueva y llenarla con los campos
   const sendOrder = (totalPrice, buyerData, buyDate) => {
@@ -26,15 +27,24 @@ const CartProvider = (props) => {
   }
 
   const changeStock = (changeItems) => {
-    console.log(changeItems)
+    const db = getFirestore()
+    changeItems.forEach( (item, index) => {
+      const docRef = doc(db, "items", item.id)
+
+      getDoc(docRef).then((snapshot) => {
+        const prodQty = snapshot.data().stock
+        console.log((prodQty - item.qty))
+        setAvailableStock(prodQty - item.qty)
+        //return availableStock
+      })
+      console.log(availableStock)
+      //updateDoc(docRef, {stock: availableStock}).then((res) => console.log("Actualizacion correcta"))
+    })
   }
 
   //actualizar un valor
   /* const updateData = () => {
-    const db = getFirestore()
-    const docRef = doc(db, "orders", "id fgdlgdflkjdifd")
-    updateDoc(docRef, {total: 300}).then((res) => console.log("Actualizacion correcta"))
-
+    updateDoc(docRef, {stock: getProducts - item.qty}).then((res) => console.log("Actualizacion correcta"))
   } */
 
   //actualizar varios
