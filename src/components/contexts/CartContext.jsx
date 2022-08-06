@@ -1,13 +1,11 @@
 import React, { createContext, useEffect, useState } from "react"
-import { addDoc, collection, getFirestore, doc, updateDoc, getDoc, documentId, query, writeBatch, getDocs } from "firebase/firestore";
+import { addDoc, collection, getFirestore, doc, updateDoc, getDoc, documentId, query, writeBatch, getDocs, docs, where } from "firebase/firestore";
 
 export const CartContext = createContext()
 
 const CartProvider = (props) => {
   const [cartItems, setCartItems] = useState([])
-  /* const [availableStock, setAvailableStock] = useState(0) */
 
-  //crear coleccion nueva y llenarla con los campos
   const sendOrder = (totalPrice, buyerData, buyDate) => {
     const db = getFirestore()
     const orderCollection = collection(db, "orders")
@@ -26,11 +24,7 @@ const CartProvider = (props) => {
     console.log(orderId)
   }
 
-  
-  
-  
-  export const changeStock = async(changeItems) => {
-    console.log(changeItems)
+  const changeStock = async(changeItems) => {
     const db = getFirestore()
     const queryCollection = collection(db, "items")
 
@@ -46,29 +40,11 @@ const CartProvider = (props) => {
     const batch = writeBatch(db)
     await getDocs(queryStock).then(res =>
       res.docs.forEach(e => batch.update(e.ref, {
-        stock: e.data().stock - changeItems.find(element => element.item.id === e.id).quantity
+        stock: e.data().stock - changeItems.find(element => element.item.id === e.id).count
       }))  
     )
     batch.commit()
   }
-
-  //actualizar un valor
-  /* const updateData = () => {
-    updateDoc(docRef, {stock: getProducts - item.qty}).then((res) => console.log("Actualizacion correcta"))
-  } */
-
-  //actualizar varios
-  /* const multipleUpdates = () => {
-    const db = getFirestore()
-    const batch = writeBatch(db)
-    const docRef = doc(db, "orders", "id fgdlgdflkjdifd")
-    const docWithoutPrice = doc(db, "orders", "id l345kl43j")
-    batch.update(docRef, { total: 180})
-    batch.update(docWithoutPrice, {
-      buyer: { mail: "test", name: "test", phone: "1111" },
-    })
-    batch.commit()
-  } */
 
   useEffect( () => {
     isInCart()
