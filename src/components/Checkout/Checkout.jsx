@@ -19,11 +19,12 @@ const Checkout = () => {
     const today  = new Date()
     const buyDate = today.toLocaleDateString("es-ES")
     
-    const changeItems = cartItems.map( (e) => {
+    /* const changeItems = cartItems.map( (e) => {
       return { id: e.item.id, qty: e.count }
-    })
+    }) */
+
     //sendOrder(totalPrice, data, buyDate)
-    changeStock(changeItems)
+    changeStock(cartItems)
   }
 
   return ( 

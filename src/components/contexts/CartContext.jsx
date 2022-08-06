@@ -1,11 +1,11 @@
 import React, { createContext, useEffect, useState } from "react"
-import { addDoc, collection, getFirestore, doc, updateDoc, getDoc } from "firebase/firestore";
+import { addDoc, collection, getFirestore, doc, updateDoc, getDoc, documentId, query, writeBatch, getDocs } from "firebase/firestore";
 
 export const CartContext = createContext()
 
 const CartProvider = (props) => {
   const [cartItems, setCartItems] = useState([])
-  const [availableStock, setAvailableStock] = useState(0)
+  /* const [availableStock, setAvailableStock] = useState(0) */
 
   //crear coleccion nueva y llenarla con los campos
   const sendOrder = (totalPrice, buyerData, buyDate) => {
@@ -26,20 +26,30 @@ const CartProvider = (props) => {
     console.log(orderId)
   }
 
-  const changeStock = (changeItems) => {
+  
+  
+  
+  export const changeStock = async(changeItems) => {
+    console.log(changeItems)
     const db = getFirestore()
-    changeItems.forEach( (item, index) => {
-      const docRef = doc(db, "items", item.id)
+    const queryCollection = collection(db, "items")
 
-      getDoc(docRef).then((snapshot) => {
-        const prodQty = snapshot.data().stock
-        console.log((prodQty - item.qty))
-        setAvailableStock(prodQty - item.qty)
-        //return availableStock
-      })
-      console.log(availableStock)
-      //updateDoc(docRef, {stock: availableStock}).then((res) => console.log("Actualizacion correcta"))
-    })
+    const queryStock = await query(
+      queryCollection,
+      where(
+        documentId(),
+        "in",
+        changeItems.map(e => e.item.id)
+      )
+    )
+
+    const batch = writeBatch(db)
+    await getDocs(queryStock).then(res =>
+      res.docs.forEach(e => batch.update(e.ref, {
+        stock: e.data().stock - changeItems.find(element => element.item.id === e.id).quantity
+      }))  
+    )
+    batch.commit()
   }
 
   //actualizar un valor
