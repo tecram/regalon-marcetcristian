@@ -5,6 +5,7 @@ export const CartContext = createContext()
 
 const CartProvider = (props) => {
   const [cartItems, setCartItems] = useState([])
+  const [orderId, setOrderId] = useState()
 
   const sendOrder = (totalPrice, buyerData, buyDate) => {
     const db = getFirestore()
@@ -16,13 +17,16 @@ const CartProvider = (props) => {
       date: buyDate
     }
     addDoc(orderCollection, order)
-      .then(res => orderConfirmed(res.id))
+      .then(res => {
+        setOrderId(res.id)
+    })
       .catch(err => console.log("error", err))
   }
 
-  const orderConfirmed = (orderId) => {
+  /* const orderConfirmed = (orderId) => {
     console.log(orderId)
-  }
+    return <h1>Orden Confirmada</h1>
+  } */
 
   const changeStock = async(changeItems) => {
     const db = getFirestore()
@@ -90,7 +94,7 @@ const CartProvider = (props) => {
   }
 
   return (
-    <CartContext.Provider value={{ cartItems, addItem, totalizer, removeItem, clearCart, sendOrder, changeStock }}>
+    <CartContext.Provider value={{ cartItems, addItem, totalizer, removeItem, clearCart, sendOrder, changeStock, orderId }}>
       {props.children}
     </CartContext.Provider>
   );

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const Checkout = () => {
   const [totalPrice, setTotalPrice] = useState(0)
-  const { cartItems, totalizer, sendOrder, changeStock } = useContext(CartContext)
+  const { cartItems, totalizer, sendOrder, changeStock, orderId } = useContext(CartContext)
 
   useEffect(() => {
     setTotalPrice(totalizer())
@@ -20,8 +20,12 @@ const Checkout = () => {
     const buyDate = today.toLocaleDateString("es-ES")
     
     sendOrder(totalPrice, data, buyDate)
-    changeStock(cartItems)
+    // changeStock(cartItems)
   }
+
+  /* const orderConfirmed = () => {
+    console.log('order confirmed', cartItems)
+  } */
 
   return ( 
     <>
