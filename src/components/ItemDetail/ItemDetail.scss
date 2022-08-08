@@ -77,7 +77,7 @@
       margin-top: 10px;
 
       .pdp-buy-button {
-        @include buy-button()
+        @include buy-button();
       }
     }
 
@@ -100,9 +100,29 @@
       color: #A8180F;
     }
 
-    .pdp-go-cart {
-      @include buy-button();
-      margin-top: 10px;
+    .pdp-btn-container {
+      display: flex;
+      width: 100%;
+      justify-content: flex-start;
+      align-items: center;
+
+      .pdp-go-home {
+        @include buy-button();
+        background-color: #A8180F;
+        border: none;
+        outline: none;
+      }
+
+      .pdp-go-cart {
+        @include buy-button();
+        margin-top: 10px;
+      }
+
+      a {
+        &:first-child {
+          margin-right: 10px;
+        }
+      }
     }
   }
 }
