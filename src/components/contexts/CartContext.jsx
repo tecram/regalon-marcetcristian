@@ -1,11 +1,13 @@
 import React, { createContext, useEffect, useState } from "react"
 import { addDoc, collection, getFirestore, doc, updateDoc, getDoc, documentId, query, writeBatch, getDocs, docs, where } from "firebase/firestore";
+import { useNavigate } from "react-router-dom"
 
 export const CartContext = createContext()
 
 const CartProvider = (props) => {
   const [cartItems, setCartItems] = useState([])
   const [orderId, setOrderId] = useState()
+  const [completeOrder, setCompleteOrder] = useState({})
 
   const sendOrder = (totalPrice, buyerData, buyDate) => {
     const db = getFirestore()
@@ -19,14 +21,17 @@ const CartProvider = (props) => {
     addDoc(orderCollection, order)
       .then(res => {
         setOrderId(res.id)
+        setCompleteOrder(order)
+        orderConfirmed()
     })
       .catch(err => console.log("error", err))
   }
 
-  /* const orderConfirmed = (orderId) => {
-    console.log(orderId)
-    return <h1>Orden Confirmada</h1>
-  } */
+  const orderConfirmed = () => {
+    let navigate = useNavigate()
+    console.log(completeOrder)
+    return navigate("../summary", { replace: true })
+  }
 
   const changeStock = async(changeItems) => {
     const db = getFirestore()
@@ -94,7 +99,7 @@ const CartProvider = (props) => {
   }
 
   return (
-    <CartContext.Provider value={{ cartItems, addItem, totalizer, removeItem, clearCart, sendOrder, changeStock, orderId }}>
+    <CartContext.Provider value={{ cartItems, addItem, totalizer, removeItem, clearCart, sendOrder, changeStock, orderId, completeOrder }}>
       {props.children}
     </CartContext.Provider>
   );

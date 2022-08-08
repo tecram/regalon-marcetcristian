@@ -23,10 +23,6 @@ const Checkout = () => {
     // changeStock(cartItems)
   }
 
-  /* const orderConfirmed = () => {
-    console.log('order confirmed', cartItems)
-  } */
-
   return ( 
     <>
       <section className="checkout-container">
