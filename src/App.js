@@ -9,8 +9,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 function App() {
   return <>
-    <CartProvider>
-      <BrowserRouter>
+    <BrowserRouter>
+      <CartProvider>
         <NavBar />
         <Routes>
           <Route path="/" element={<ItemListContainer />} />
@@ -22,8 +22,8 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/summary" element={<Summary />} />
         </Routes>
-      </BrowserRouter>
-    </CartProvider>
+      </CartProvider>
+    </BrowserRouter>
   </>
 }
 

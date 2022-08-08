@@ -20,7 +20,7 @@ const Checkout = () => {
     const buyDate = today.toLocaleDateString("es-ES")
     
     sendOrder(totalPrice, data, buyDate)
-    // changeStock(cartItems)
+    changeStock(cartItems)
   }
 
   return ( 

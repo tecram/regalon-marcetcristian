@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from "react"
-import { addDoc, collection, getFirestore, doc, updateDoc, getDoc, documentId, query, writeBatch, getDocs, docs, where } from "firebase/firestore";
+import { addDoc, collection, getFirestore, documentId, query, writeBatch, getDocs, where } from "firebase/firestore";
 import { useNavigate } from "react-router-dom"
 
 export const CartContext = createContext()
@@ -8,6 +8,7 @@ const CartProvider = (props) => {
   const [cartItems, setCartItems] = useState([])
   const [orderId, setOrderId] = useState()
   const [completeOrder, setCompleteOrder] = useState({})
+  let navigate = useNavigate()
 
   const sendOrder = (totalPrice, buyerData, buyDate) => {
     const db = getFirestore()
@@ -21,15 +22,13 @@ const CartProvider = (props) => {
     addDoc(orderCollection, order)
       .then(res => {
         setOrderId(res.id)
-        setCompleteOrder(order)
+        setCompleteOrder({...order, orderId: res.id})
         orderConfirmed()
     })
       .catch(err => console.log("error", err))
   }
 
   const orderConfirmed = () => {
-    let navigate = useNavigate()
-    console.log(completeOrder)
     return navigate("../summary", { replace: true })
   }
 
