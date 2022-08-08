@@ -56,4 +56,13 @@
       }
     }
   }
+
+  .back-home {
+    @include buy-button();
+    margin: 30px auto 30px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    line-height: 40px;
+  }
 }

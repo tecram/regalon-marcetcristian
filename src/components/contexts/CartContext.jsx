@@ -29,6 +29,7 @@ const CartProvider = (props) => {
   }
 
   const orderConfirmed = () => {
+    clearCart()
     return navigate("../summary", { replace: true })
   }
 
