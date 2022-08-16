@@ -13,17 +13,29 @@ const ItemDetailContainer = () => {
     const docRef = doc(db, "items", id)
     getDoc(docRef).then((snapshot) => { 
       const data = {id: snapshot.id, ...snapshot.data()}
+      
+      if(product) {
+        console.log('product true')
+      }
       setProduct(data)
       setLoading(true)
       return data
     })
-  }, [id]);
-
-  return ( 
-    <section className='product-detail'>
-      <ItemDetail product={product} loading={loading} />
-    </section>
-  );
+  }, [id])
+  
+  return (
+    <>
+      {product ? (
+        <section className='product-detail'>
+          <ItemDetail product={product} loading={loading} />
+        </section>
+      ) : (
+        <section className='product-detail-error'>
+          <p>Producto no encontrado.</p>
+        </section>
+      )}
+    </>
+  )
 }
  
 export default ItemDetailContainer;
