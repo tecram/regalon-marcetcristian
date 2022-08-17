@@ -1,3 +1,4 @@
+import './ItemDetailContainer.scss'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
@@ -6,6 +7,7 @@ import { getDoc, doc, getFirestore } from "firebase/firestore"
 const ItemDetailContainer = () => {
   const [loading, setLoading] = useState(false)
   const [product, setProduct] = useState(false)
+  const [productExists, setProductExists] = useState(false)
   const { id } = useParams();
 
   useEffect(() => {
@@ -14,10 +16,10 @@ const ItemDetailContainer = () => {
     getDoc(docRef).then((snapshot) => { 
       const data = {id: snapshot.id, ...snapshot.data()}
       
-      if(product) {
-        console.log('product true')
+      if(snapshot.exists()) {
+        setProductExists(true)
+        setProduct(data)
       }
-      setProduct(data)
       setLoading(true)
       return data
     })
@@ -25,7 +27,7 @@ const ItemDetailContainer = () => {
   
   return (
     <>
-      {product ? (
+      {productExists ? (
         <section className='product-detail'>
           <ItemDetail product={product} loading={loading} />
         </section>
