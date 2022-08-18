@@ -5,22 +5,34 @@ import { Link } from 'react-router-dom'
 
 const Checkout = () => {
   const [totalPrice, setTotalPrice] = useState(0)
+  const [emailVal, setEmailVal] = useState(false)
   const { cartItems, totalizer, sendOrder, changeStock, orderId } = useContext(CartContext)
 
   useEffect(() => {
     setTotalPrice(totalizer())
   }, [cartItems])
 
+  const validateEmail = (e) => {
+    let firstEmail = document.getElementsByName('email')
+    
+    if(e.target.value === firstEmail[0].value) {
+      setEmailVal(true)
+    }
+  }
+
   const onSubmit = (e) => {
     e.preventDefault()
-    const inputsValues = document.getElementsByTagName("input")
-    const data = Array.from(inputsValues).map((input, index) => input.value)
-    data.shift()
-    const today  = new Date()
-    const buyDate = today.toLocaleDateString("es-ES")
-    
-    sendOrder(totalPrice, data, buyDate)
-    changeStock(cartItems)
+
+    if(emailVal) {
+      const inputsValues = document.getElementsByTagName("input")
+      const data = Array.from(inputsValues).map((input, index) => input.value)
+      data.shift()
+      const today  = new Date()
+      const buyDate = today.toLocaleDateString("es-ES")
+      
+      sendOrder(totalPrice, data, buyDate)
+      changeStock(cartItems)
+    }
   }
 
   return ( 
@@ -33,6 +45,7 @@ const Checkout = () => {
               <form>
                 <input type="text" name="name" placeholder="Nombre*" required />
                 <input type="email" name="email" placeholder="Email*" required />
+                <input onKeyUp={validateEmail} type="email" name="email-confirm" placeholder="Confirme Email*" required />
                 <input type="tel" name="tel" placeholder="Teléfono*" required />
                 <button onClick={onSubmit} type="submit">CONFIRMAR DATOS</button>
               </form>
