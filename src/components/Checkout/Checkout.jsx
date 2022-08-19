@@ -5,25 +5,27 @@ import { Link } from 'react-router-dom'
 
 const Checkout = () => {
   const [totalPrice, setTotalPrice] = useState(0)
-  const [emailVal, setEmailVal] = useState(false)
   const { cartItems, totalizer, sendOrder, changeStock, orderId } = useContext(CartContext)
 
   useEffect(() => {
     setTotalPrice(totalizer())
   }, [cartItems])
 
-  const validateEmail = (e) => {
+  const validateEmail = () => {
     let firstEmail = document.getElementsByName('email')
+    let secondEmail = document.getElementsByName('email-confirm')
     
-    if(e.target.value === firstEmail[0].value) {
-      setEmailVal(true)
+    if(secondEmail[0].value === firstEmail[0].value) {
+      return true
     }
+    return false
   }
 
   const onSubmit = (e) => {
     e.preventDefault()
 
-    if(emailVal) {
+    if(validateEmail()) {
+      document.getElementsByClassName('email-error')[0].classList.remove('error')
       const inputsValues = document.getElementsByTagName("input")
       const data = Array.from(inputsValues).map((input, index) => input.value)
       data.shift()
@@ -32,6 +34,9 @@ const Checkout = () => {
       
       sendOrder(totalPrice, data, buyDate)
       changeStock(cartItems)
+    }
+    else {
+      document.getElementsByClassName('email-error')[0].classList.add('error')
     }
   }
 
@@ -45,9 +50,10 @@ const Checkout = () => {
               <form>
                 <input type="text" name="name" placeholder="Nombre*" required />
                 <input type="email" name="email" placeholder="Email*" required />
-                <input onKeyUp={validateEmail} type="email" name="email-confirm" placeholder="Confirme Email*" required />
+                <input type="email" name="email-confirm" placeholder="Confirme Email*" required />
                 <input type="tel" name="tel" placeholder="Teléfono*" required />
                 <button onClick={onSubmit} type="submit">CONFIRMAR DATOS</button>
+                <p className="email-error">Los campos de email no coinciden.</p>
               </form>
             </div>
             <div className="checkout-right">
