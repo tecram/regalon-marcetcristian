@@ -60,15 +60,15 @@ const Checkout = () => {
               <table>
                 <tbody>
                   {cartItems.map((product, index) => (
-                    <>
-                      <tr className="product-row-top" key={`top-${index}`}>
+                    <React.Fragment key={index}>
+                      <tr className="product-row-top">
                         <td colSpan={2} className="product-image-name"><img src={product.item.pictureUrl} alt={product.item.title} /><span>{product.item.title}</span></td>
                       </tr>
-                      <tr className="product-row-bottom" key={`bottom-${index}`}>
+                      <tr className="product-row-bottom">
                         <td align="left" className="product-qty"><span>Cantidad:</span> {product.count}</td>
                         <td align="right" className="product-price">${product.item.price * product.count}</td>
                       </tr>
-                    </>
+                    </React.Fragment>
                   ))}
                 </tbody>
               </table>
