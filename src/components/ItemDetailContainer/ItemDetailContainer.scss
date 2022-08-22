@@ -1,0 +1,13 @@
+@import '../../scss/variables.scss';
+
+.product-detail-error {
+  @include center-layout();
+  text-align: center;
+  font-size: 18px;
+
+  p {
+    margin-top: 40px;
+    color: #A8180F;
+    font-weight: 600;
+  }
+}

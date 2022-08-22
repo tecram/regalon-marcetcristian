@@ -5,7 +5,6 @@ import "./Summary.scss"
 
 const Summary = () => {
   const { completeOrder } = useContext(CartContext)
-  console.log(completeOrder)
   return (
     <>
       <section className="product-summary-container">
